@@ -85,46 +85,103 @@ h3 {
     justify-content: center;
     column-gap: 40px;
 }
+
 .main_ul li {
-    padding: 20px;
+    height: 15px;
     width: 130px;
+    background-color: rgb(57, 132, 206);
+}
+.mpgal-button {
+    padding: 20px 10px 20px 40px;
+    height: 55px;
+    width: 180px;
     background-color: rgb(57, 132, 206);
     position: relative;
 }
+
+.menu_svg1 {
+    left: 7%;
+    z-index: 11;
+}
+.menu_svg2 {
+    right: 5%;
+    z-index: 10;
+    transform: rotate(90deg) ;
+}
+.menu_svg3 {
+    transform: rotate(180deg) ;
+    left: 3px;
+}
+.svgmenu {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    margin-top: -20px;
+}
+
+.rel-li {
+    position: relative;
+}
+
+
 .main_ul > li a {
     text-transform: uppercase;
     text-decoration: none;
     color: aliceblue;
-    display: block;
 }
 
 .inner_ul {
-    display: none;
     position: absolute;
-    left: 0;
     top: 100%;
+    left: 1000%;
+    transition: all 1s cubic-bezier(.42,.97,.52,1.2);
+
+}
+.hw:hover .inner_ul {
+    left: 0;
+    height: 100%;
+}
+
+
+.site_ul {
+    position: absolute;
+    right: -1000%;
+    top: 0;
     z-index: 10;
+    transition: all 1s cubic-bezier(.42,.97,.52,1.2);
+}
+
+
+.rel-li:hover .site_ul {
+    right: 100%;
+}
+
+
+
+.hw {
+    padding: 20px 40px 20px 10px;
+    height: 15px;
+    width: 130px;
+    background-color: rgb(57, 132, 206);
+    position: relative;
+}
+
+.hw li {
+    height: 55px;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main_ul li:hover, .inner_ul li:hover {
     background: rgb(47, 0, 255);
 }
 
-.site_ul {
-    display: none;
-    position: absolute;
-    right: 100%;
-    top: 0;
-    z-index: 10;
-}
 
-.hw:hover .inner_ul {
-    display: block;
-}
 
-.rel-li:hover .site_ul {
-    display: block;
-}
+
 .rel-li {
     position: relative;
 }
@@ -182,9 +239,7 @@ ol li:before {
 
 .textblock {
     display: none;
-    /* display: inline-block; */
     width: 100%;
-    /* height: 50%; */
     height: 160px;
     overflow: hidden;
     position: absolute;
@@ -222,5 +277,9 @@ ol li:before {
 
 .icon_container {
     display: inline-block;
-    margin-top: 30px ;
 }
+
+.social_networks {
+    padding-top: 30px;
+}
+
