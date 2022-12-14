@@ -70,6 +70,7 @@ h3 {
     background-color: rgba(56, 100, 196, 0.116);
     padding: 40px;
     position: relative;
+    overflow: hidden;
 }
 
 .logo {
@@ -282,4 +283,58 @@ ol li:before {
 .social_networks {
     padding-top: 30px;
 }
+
+.hover_me {
+    width: 100px;
+    height: 130px;
+    position: fixed;
+    bottom: -105px;
+    right: 20vw;
+    transition: ease 1s ;
+}
+
+.upper_hover {
+    text-align: center;
+    width: 120px;
+    background: grey;
+    border: solid darkgray 2px;
+    border-radius: 7px;
+}
+
+.lower_hover {
+    font-size: 0;
+}
+
+.hover_me a {
+    text-decoration: none;
+    color: black;
+}
+
+.hover_ul svg {
+    width: 40px;
+    height: 40px;
+    transform: rotate(-45deg) scale(0.6);
+    fill: rgb(209, 43, 159);
+}
+
+.hover_ul li {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border: 2px rgb(0, 0, 0) solid;
+    transform: translateY(20%) translateX(70%);
+}
+
+.hover_ul  {
+    transform: rotate(45deg);
+}
+
+.hover_me:hover {
+    bottom: 3vh;
+}
+
+.hover_ul li:hover  {
+    background:rgba(209, 43, 159, 0.152);
+}
+
 
