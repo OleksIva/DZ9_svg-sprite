@@ -111,7 +111,7 @@ h3 {
 }
 .menu_svg3 {
     transform: rotate(180deg) ;
-    left: 3px;
+    left: -10px;
 }
 .svgmenu {
     position: absolute;
@@ -137,11 +137,11 @@ h3 {
     top: 100%;
     left: 1000%;
     transition: all 1s cubic-bezier(.42,.97,.52,1.2);
+    z-index: 50;
 
 }
 .hw:hover .inner_ul {
     left: 0;
-    height: 100%;
 }
 
 
@@ -285,35 +285,49 @@ ol li:before {
 }
 
 .hover_me {
-    width: 100px;
-    height: 130px;
     position: fixed;
-    bottom: -105px;
+    bottom: 0;
     right: 20vw;
     transition: ease 1s ;
+    transform: translateY(calc(100% - 28px));
 }
 
 .upper_hover {
     text-align: center;
-    width: 120px;
     background: grey;
     border: solid darkgray 2px;
     border-radius: 7px;
+    font-size: 20px;
+    animation: shaking 1s infinite; 
 }
 
-.lower_hover {
-    font-size: 0;
+@keyframes shaking {
+    0% { transform: rotate(0deg); }
+    10% { transform: translate(0, -10px) rotate(-1deg); }
+    20% { transform: translate(0, -10px) rotate(1deg); }
+    30% { transform: translate(0, -10px) rotate(0deg); }
+    40% { transform: translate(0, -10px) rotate(1deg); }
+    50% { transform: translate(0, -10px) rotate(-1deg); }
+    60% { transform: translate(0, -10px) rotate(0deg); }
+    70% { transform: translate(0, -10px) rotate(-1deg); }
+    80% { transform: translate(0, -10px) rotate(1deg); }
+    90% { transform: translate(0, -10px) rotate(0deg); }
+    100% { transform: rotate(-1deg); }
 }
+
+
+
 
 .hover_me a {
     text-decoration: none;
     color: black;
+    display: block;
 }
 
 .hover_ul svg {
     width: 40px;
     height: 40px;
-    transform: rotate(-45deg) scale(0.6);
+    transform: rotate(-45deg);
     fill: rgb(209, 43, 159);
 }
 
@@ -322,19 +336,31 @@ ol li:before {
     height: 40px;
     width: 40px;
     border: 2px rgb(0, 0, 0) solid;
-    transform: translateY(20%) translateX(70%);
+    font-size: 12px;
+    line-height: 0;
+    padding: 10px;
 }
 
 .hover_ul  {
     transform: rotate(45deg);
+    font-size: 0;
+    width: 150px;
+
 }
 
 .hover_me:hover {
-    bottom: 3vh;
+    transform: translateY(0);
+}
+
+.hover_me:hover .upper_hover {
+    animation: none;
 }
 
 .hover_ul li:hover  {
     background:rgba(209, 43, 159, 0.152);
 }
 
+.lower_hover {
+    padding: 30px;
+}
 
